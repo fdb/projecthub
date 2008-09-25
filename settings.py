@@ -61,12 +61,20 @@ INSTALLED_APPS = (
 #    'apps.repository',
     'apps.weblog',
     'apps.forum',
+    'apps.accounts',
     'dmigrations',
 )
 
 # Migrations
 DMIGRATIONS_DIR = os.path.join(PROJECT_ROOT, 'migrations')
 DISABLE_SYNCDB = True
+
+# accounts app settings
+BOGUS_EMAIL_DOMAINS = (
+    'dodgeit.com',
+    'mailinator.com',
+    'spamgourmet.com',
+)
 
 # Add required dependencies
 sys.path.append(os.path.join(PROJECT_ROOT, 'vendor'))

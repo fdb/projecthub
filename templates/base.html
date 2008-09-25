@@ -14,6 +14,13 @@
 <div id="wrap">
 <div id="header">
 <div id="logo"><a href="/"><img src="{{ MEDIA_URL }}/img/gravital-logo.png" alt="Gravital logo"></a></div>
+<div id="user">
+	{% if user.is_anonymous %}
+	<a href="/accounts/login/">Login</a>
+	{% else %}
+	Logged in as {{ user.username }}. (<a href="/accounts/logout/">logout</a>)
+	{% endif %}
+</div>
 <ul id="nav">
 	<li class="first"><a rel="home" href="/">Home</a></li>
 	<li><a href="/download/">Download</a></li>

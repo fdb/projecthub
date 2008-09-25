@@ -1,16 +1,15 @@
 Dependencies
 ============
-
 The Gravital website has the following dependencies:
+
+* PIL (Python Imaging Library): http://www.pythonware.com/products/pil/
+
+In addition, the following libraries are included in the "vendor" folder:
 
 * typogrify
 * template_utils
 * dmigrations
 * smartypants
-
-All these are already in the "vendor" folder, and settings.py adds this folder
-to the sys.path, so you should be all set.
-
 
 Creating the databse
 ====================

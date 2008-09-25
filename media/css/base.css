@@ -62,6 +62,10 @@ body {
   padding: 0;
 }
 
+form {
+    margin-bottom: 10px;
+}
+
 .small {
     font-size: 11px;
 }
@@ -79,6 +83,12 @@ body {
 
 #logo a img { 
   border: 0;
+}
+
+#user {
+    float: right;
+    position: relative;
+    top: -20px;
 }
 
 #nav { 
@@ -146,28 +156,28 @@ body {
 
 /* FORUM */
 
-#forum table {
+table {
     border: 1px solid #ccc;
     width: 600px;
     clear: both;
     margin: 10px 0 0 0;
 }
 
-#forum table td {
+table td {
     border-bottom: 1px solid #eee;
 }
 
-#forum table tr:last-child td {
+table tr:last-child td {
     border-bottom: 0;
 }
 
-#forum th {
+th {
     text-align: left;
     background: #eee;
-    
+    border-bottom: 1px solid #ccc;
 }
 
-#forum td, #forum th {
+td, th {
     padding: 8px 10px 5px 10px;
     vertical-align: top;
 }
@@ -179,19 +189,19 @@ p.date {
     padding: 0;
 }
 
-#forum table.forum-topics {
+table.forum-topics {
     margin-top: 10px;
 }
 
-#forum table.forum-topics td {
+table.forum-topics td {
     padding: 3px 5px;
 }
 
-#forum div.buttons {
+div.buttons {
     margin-top: 20px;
 }
 
-#forum span.button {
+span.button {
     background: transparent url(/media/admin/img/admin/tool-left.gif);
     height: 16px;
     padding: 0 0 0 8px;
@@ -200,11 +210,11 @@ p.date {
     float: left;
 }
 
-#forum span.button:hover {
+span.button:hover {
      background: url(/media/admin/img/admin/tool-left_over.gif) 0 0 no-repeat;
 }
 
-#forum span.button a {
+span.button a {
     background: #999 url(/media/admin/img/admin/tool-right.gif) no-repeat scroll right top;
     color: white;
     text-decoration: none;
@@ -216,18 +226,18 @@ p.date {
     font-size: 11px;
 }
 
-#forum span.button a:hover {
+span.button a:hover {
     background: #5B80B2 url(/media/admin/img/admin/tool-right_over.gif) no-repeat scroll 100% 0;
 }
 
-#forum .errorlist {
+.errorlist {
     color: white;
     background: red;
     margin: 0 0 10px 0;
     padding: 5px 10px;
 }
 
-#forum .errorlist li {
+.errorlist li {
     list-style-type: none;
     font-weight: bold;
 }
