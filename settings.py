@@ -44,7 +44,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
-ROOT_URLCONF = 'gravital_website.urls'
+ROOT_URLCONF = 'projecthub.urls'
 
 TEMPLATE_DIRS = (os.path.join(PROJECT_ROOT, 'templates'),)
 

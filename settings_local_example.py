@@ -3,7 +3,7 @@ SECRET_KEY = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 
 # Database settings
 DATABASE_ENGINE = 'mysql'
-DATABASE_NAME = 'gravital'
+DATABASE_NAME = 'projecthub'
 DATABASE_USER = ''
 DATABASE_PASSWORD = ''
 DATABASE_HOST = ''

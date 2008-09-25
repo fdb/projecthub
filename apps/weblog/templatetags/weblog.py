@@ -1,6 +1,6 @@
 import datetime
 from django import template
-from gravital_website.apps.weblog.models import Entry
+from projecthub.apps.weblog.models import Entry
 
 register = template.Library()
 
