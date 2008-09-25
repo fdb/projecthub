@@ -1,9 +1,9 @@
 {% extends "admin/base.html" %}
 {% load i18n %}
-{% block title %}{{ title }} | {% trans 'Gravital site admin' %}{% endblock %}
+{% block title %}{{ title }} | {{ SITE_NAME }} site admin{% endblock %}
 
 {% block branding %}
-<h1 id="site-name">{% trans 'Gravital administration' %}</h1>
+<h1 id="site-name">{{ SITE_NAME }} administration</h1>
 {% endblock %}
 
 {% block nav-global %}{% endblock %}

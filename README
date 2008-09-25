@@ -1,1 +1,6 @@
-Gravital website
+ProjectHub is a generic framework for project sites. It features:
+
+* A weblog (of course!)
+* A forum
+* An account system
+* WYSIWYG page editing

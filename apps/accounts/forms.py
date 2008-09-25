@@ -1,8 +1,9 @@
 import re
+
 from django import forms
 from django.contrib.auth.models import User
 from django.utils.safestring import SafeString
-import settings
+from django.conf import settings
 
 domain_expression = re.compile('^.*@(.*)$')
 
@@ -35,7 +36,7 @@ class UserCreateForm(forms.Form):
         if self.cleaned_data.get('email'):
             try:
                 User.objects.get(email__exact=self.cleaned_data['email'])
-                raise forms.ValidationError(u'Email "%s" already exists. Go to http://www.gravital.net/accounts/forgot/ to reset your password.' % self.cleaned_data['email'])
+                raise forms.ValidationError(u'Email "%s" already exists. Go to %saccounts/forgot/ to reset your password.' % (self.cleaned_data['email'], settings.SITE_URL))
             except User.DoesNotExist:
                 pass
             match = re.match(domain_expression, self.cleaned_data['email'])

@@ -1,19 +1,18 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en">
 <head>
-	<title>Gravital | {% block title %}Making design creative again{% endblock %}</title>
+	<title>{{ SITE_NAME }} | {% block title %}{{ SITE_TAGLINE }}{% endblock %}</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta http-equiv="imagetoolbar" content="no">
 	<meta name="MSSmartTagsPreventParsing" content="true">
 	<link rel="stylesheet" href="{{ MEDIA_URL }}/css/base.css" type="text/css">
-	<meta name="keywords" content="Graphic Design, Natural Language, NodeBox, Python, Mac, framework, open-source" />
-	<meta name="description" content="Gravital is an open-source application for graphic designers that works with nodes instead of point-and-click." />
+	<meta name="description" content="{{ SITE_DESCRIPTION }}" />
 	{% block extrahead %}{% endblock %}
 </head>
 <body id="{% block sectionid %}page{% endblock %}">
 <div id="wrap">
 <div id="header">
-<div id="logo"><a href="/"><img src="{{ MEDIA_URL }}/img/gravital-logo.png" alt="Gravital logo"></a></div>
+<div id="logo"><a href="/"><img src="{{ MEDIA_URL }}/img/logo.png" alt="{{ SITE_NAME }} logo"></a></div>
 <div id="user">
 	{% if user.is_anonymous %}
 	<a href="/accounts/login/">Login</a>
@@ -39,7 +38,7 @@
 	{% endblock %}
 </div> <!-- END #columnwrap -->
 </div> <!-- END #main -->
-<p id="footer">Copyright &copy; 2006-2008 <a href="/">Experimental Media Group</a>. Get more information <a href="/about/">about us</a> or <a href="/about/colophon/">this website</a>. Valid <a href="http://validator.w3.org/check?uri=referer">HTML</a> and <a href="http://jigsaw.w3.org/css-validator/">
+<p id="footer">Copyright &copy; 2008. Get more information <a href="/about/">about us</a> or <a href="/about/colophon/">this website</a>. Valid <a href="http://validator.w3.org/check?uri=referer">HTML</a> and <a href="http://jigsaw.w3.org/css-validator/">
 CSS</a>.</p>
 </div> <!-- END #wrap -->
 </body>

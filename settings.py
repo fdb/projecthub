@@ -6,7 +6,6 @@ TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (('Frederik De Bleser', 'frederik@pandora.be'),)
 MANAGERS = ADMINS
-DEFAULT_FROM_EMAIL = 'webmaster@gravital.net'
 
 TIME_ZONE = 'Europe/Brussels'
 LANGUAGE_CODE = 'en'
@@ -50,6 +49,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.i18n',
     'django.core.context_processors.media',
     'util.context.primary_links_to_context',
+    'util.context.site_info_to_context',
 )
 
 ROOT_URLCONF = 'projecthub.urls'
