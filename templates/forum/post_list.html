@@ -10,6 +10,9 @@
 	<td>
 		<p class="date">{{post.created_at|date:"j N y"}} {{post.created_at|date:"H:i"}}</p>
 		{{ post.body|typogrify|linebreaks|urlizetrunc:40 }}
+		{% ifequal user post.user %}
+		<span class="small"><a href="{{ post.get_absolute_url }}edit/">Edit</a></span>
+		{% endifequal %}
 	</td>
 </tr>
 {% endfor %}
@@ -21,32 +24,3 @@
 {% endifequal %}
 </div>
 {% endblock %}
-{% comment %}
-
-
-{% if forloop.first %}
-<a id="posts-{{post.id}}" name="posts-{{post.id}}" />
-{% else %}
-<tr class="spacer"><td colspan="2"><a id="posts-{{post.id}}" name="posts-{{post.id}}" />
-{% endif %}
-<tr id="posts-{{post.id}}-row" class="post hentry">
-	<td class="author vcard">
-		<div class="date">
-			<a rel="bookmark" href="#posts-{{post.id}}">
-				<abbr class="updated" title="{{post.created_at}}">{{post.created_at|date:"j N y"}}<br />{{post.created_at|date:"H:i"}}</abbr>
-			</a>
-		</div>
-		<span class="fn"><a class="admin" href="{{ post.user.get_absolute_url }}">{{ post.user }}</a></span>
-		<span class="posts">1 post</span>
-		{% ifequal current_user post.user %}
-		<span class="edit"><a href="{{ post.get_absolute_url }}edit/">Edit</a></span>
-		{% endifequal %}
-		
-	</td>
-	<td id="post-body-{{post.id}}" class="body entry-content">
-		{{ post.body }}
-	</td>
-</tr>
-{% endfor %}
-</table>
-{% endcomment %}
