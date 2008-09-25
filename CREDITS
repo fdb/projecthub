@@ -1,0 +1,10 @@
+ProjectHub is written mainly by Frederik De Bleser.
+
+ProjectHub is a Django website. This project would not be possible without the terrific work of the Django maintainers.
+
+In addition to core Django, we use the following libraries:
+
+* typogrify: http://code.google.com/p/typogrify/
+* template_utils: http://code.google.com/p/django-template-utils/
+* dmigrations: http://code.google.com/p/dmigrations/
+* smartypants: http://web.chad.org/projects/smartypants.py/

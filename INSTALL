@@ -1,15 +1,27 @@
-Dependencies
-============
+Quick install guide
+===================
+
+1. Install all dependencies.
+2. Copy settings_local_example.py to settings_local.py and configure.
+3. Run ./manage.py dmigrate all to initialize the database.
+4. Run ./manage.py createsuperuser .
+5. Create a site object in the admin with the URL of your site.
+6. Create a homepage in the admin (see below)
+
+1. Installing dependencies
+==========================
 ProjectHub has the following dependencies:
 
+* Django: http://www.djangoproject.org/
 * PIL (Python Imaging Library): http://www.pythonware.com/products/pil/
 
-In addition, the following libraries are included in the "vendor" folder:
-
-* typogrify
-* template_utils
-* dmigrations
-* smartypants
+Configuring the project settings
+================================
+All settings for your installation need to be in a file called
+settings_local.py. This file does not exist yet, but you can start by copying
+settings_local_example.py and changing what you like. Here, you can specify
+the site information, a database (MySQL only), and the primary navigation
+links.
 
 Creating the databse
 ====================
@@ -20,11 +32,27 @@ We use dmigrations to maintain our database. So, to initialize, run:
 
 Adding the superuser
 ====================
-
+Run the following command to create a superuser, used for logging in to the
+admin:
 ./manage.py createsuperuser
 
 
 Running the test server
 =======================
-
+Run the following command to start a test server on port 8000:
 ./manage.py runserver
+
+
+Creating the site object
+========================
+Log in to the admin (http://wwww.example.com/admin/) and add a Site object. For both the domain name and display name, enter the URL of your website.
+
+Creating the homepage
+=====================
+Log in to the admin and add a Flatpage object:
+
+URL: / (note: this is one forward slash)
+Title: Homepage title (I use "Welcome")
+Sites: Indicate the just created site object
+Show advanced options, and enter the following for template name:
+Template name: flatpages/homepage.html
