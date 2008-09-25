@@ -1,0 +1,12 @@
+{% extends "base_2col.html" %}
+{% load typogrify %}
+
+{% block title %}{{ flatpage.title }}{% endblock %}
+{% block sectionid %}homepage{% endblock %}
+{% block pagetitle %}{{ flatpage.title|typogrify }}{% endblock %}
+{% block content %}{{ flatpage.content|safe|typogrify }}{% endblock %}
+{% block content-related %}
+<h2>Weblog</h2>
+{% load weblog %}
+{% render_latest_blog_entries 4 %}
+{% endblock %}

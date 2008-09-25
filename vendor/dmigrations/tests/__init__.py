@@ -1,0 +1,5 @@
+from commands import CommandsTest
+from migration_db import MigrationDbTest
+from migration_loader import MigrationLoaderTest
+from migration_state import MigrationStateTest
+from migration_log import MigrationLogTest

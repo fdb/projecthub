@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% load typogrify %}
+{% block title %}{{ flatpage.title }}{% endblock %}
+{% block pagetitle %}{{ flatpage.title|typogrify }}{% endblock %}
+{% block content %}{{ flatpage.content|safe|typogrify }}{% endblock %}

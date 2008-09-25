@@ -1,0 +1,56 @@
+{% extends "base_2col.html" %}
+{% load typogrify %}
+{% block extrahead %}
+<!-- Skin CSS file -->
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.5.2/build/assets/skins/sam/skin.css">
+<!-- Utility Dependencies -->
+<script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
+<script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/element/element-beta-min.js"></script> 
+<!-- Needed for Menus, Buttons and Overlays used in the Toolbar -->
+<script src="http://yui.yahooapis.com/2.5.2/build/container/container_core-min.js"></script>
+<script src="http://yui.yahooapis.com/2.5.2/build/menu/menu-min.js"></script>
+<script src="http://yui.yahooapis.com/2.5.2/build/button/button-min.js"></script>
+<!-- Source file for Rich Text Editor-->
+<script src="http://yui.yahooapis.com/2.5.2/build/editor/editor-beta-min.js"></script>
+{% endblock %}
+
+{% block title %}{{ flatpage.title }}{% endblock %}
+{% block content %}
+
+<div style="background:#ddddf3;padding: 10px 10px; margin: 0 0 10px 0; width:724px;">
+	Branch: <select><option>master</option><option>v1.0</option></select>
+	<span style="float:right">
+	<strong><a href="#" onclick="document.getElementById('commit').style.display='block';">3 documentation changes</a></strong>
+	</span>
+	<div style="display:none;" id="commit">
+	<div style="margin:10px 0 0 0;">
+		<ul>
+			<li><a href="#">intro/tutorial-1.ntml</a></li>
+			<li><a href="#">ref/core/parameter.ntml</a></li>
+			<li><a href="#">ref/graphics/bezierpath.ntml</a></li>
+		</ul>
+	</div>
+	<div style="margin:10px 0 0 0;"><textarea style="width:719px;height:100px;"></textarea></div>
+	<div>
+	<span style="float:right">
+	<button>Commit</button>
+	</span>
+	</div>
+	<br style="clear:both;">
+	</div>
+</div>
+
+<div class="yui-skin-sam"> 
+
+<textarea  id="docarea">
+{{ flatpage.content }}
+</textarea>
+
+</div>
+
+<script type="text/javascript">
+var myEditor = new YAHOO.widget.Editor('docarea', { height: '550px', width: '742px'}); 
+myEditor.render(); 
+</script>
+
+{% endblock %}

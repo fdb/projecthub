@@ -1,0 +1,31 @@
+Dependencies
+============
+
+The Gravital website has the following dependencies:
+
+* typogrify
+* template_utils
+* dmigrations
+* smartypants
+
+All these are already in the "vendor" folder, and settings.py adds this folder
+to the sys.path, so you should be all set.
+
+
+Creating the databse
+====================
+We use dmigrations to maintain our database. So, to initialize, run:
+
+./manage.py dmigrate all
+
+
+Adding the superuser
+====================
+
+./manage.py createsuperuser
+
+
+Running the test server
+=======================
+
+./manage.py runserver

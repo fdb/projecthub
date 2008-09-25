@@ -1,0 +1,15 @@
+{% extends "base_weblog.html" %}
+{% load typogrify %}
+
+{% block title %}Weblog | {{ object.title }}{% endblock %}
+
+{% block content %}
+
+<h1>{{ object.title|typogrify }}</h1>
+{{ object.content|typogrify }}
+<p class="date small">Posted by <strong>{{ object.author.get_full_name }}</strong> on {{ object.created|date:"F j, Y" }}</p>
+
+<div id="content-secondary">
+<h2 id="comments">Comments</h2>
+</div>
+{% endblock %}

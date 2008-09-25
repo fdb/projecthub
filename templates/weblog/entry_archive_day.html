@@ -1,0 +1,17 @@
+{% extends "base_weblog.html" %}
+{% load typogrify %}
+{% block title %}Weblog | {{ day|date:"F j" }}{% endblock %}
+
+{% block content %}
+
+<h1>{{ day|date:"F j" }} archive</h1>
+
+{% for object in object_list %}
+<h2><a href="{{ object.get_absolute_url }}">{{ object.title|typogrify }}</a></h2>
+<p>{{ object.summary|typogrify }}</p>
+<p class="small date">{{ object.created|date:"F j, Y" }}</p>
+{{ object.body }}
+
+{% endfor %}
+
+{% endblock %}
