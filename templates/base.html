@@ -20,11 +20,13 @@
 	<li><a href="/documentation/">Documentation</a></li>
 	<li><a href="/repository/">Repository</a></li>
 	<li><a href="/weblog/">Weblog</a></li>
+	<li><a href="/forum/">Forum</a></li>
 	<li><a href="http://dev.gravital.net/">Code</a></li>
 </ul>
 </div> <!-- END #header -->
 <div id="main">
 <h1>{% block pagetitle %}{% endblock %}</h1>
+<div id="breadcrumbs">{% block breadcrumbs %}Home{% endblock %}</div>
 <div id="columnwrap">
 	{% block columnwrap %}
 		<div id="content-main">

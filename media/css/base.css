@@ -1,6 +1,6 @@
 /* @override http://localhost:8000/media/css/base.css */
 
-* { 
+body {
   font-size: 13px; 
   font-family: arial,sans-serif;
   line-height: 125%; 
@@ -60,6 +60,10 @@ body {
   padding: 0;
 }
 
+.small {
+    font-size: 11px;
+}
+
 #wrap { 
   max-width: 800px; 
   margin: 0 auto; 
@@ -106,6 +110,14 @@ body {
 #main { 
   padding: 0 0 0 20px;
 }
+#breadcrumbs {
+    padding: 10px 0 10px 0;
+    font-size: 11px;
+}
+
+#breadcrumbs a {
+    font-size: 11px;
+}
 
 #content-main { 
   float: left; 
@@ -121,6 +133,94 @@ body {
 
 /* Holy hack for Peekaboo Bug */
   margin-bottom: 20px;
+}
+
+
+/* FORUM */
+
+#forum table {
+    border: 1px solid #ccc;
+    width: 600px;
+}
+
+#forum table td {
+    border-bottom: 1px solid #eee;
+}
+
+#forum table tr:last-child td {
+    border-bottom: 0;
+}
+
+#forum th {
+    text-align: left;
+    background: #eee;
+    
+}
+
+#forum td, #forum th {
+    padding: 8px 10px 5px 10px;
+    vertical-align: top;
+}
+
+p.date {
+    font-size: 10px;
+    color: #aaa;
+    margin: 0 0 5px 0;
+    padding: 0;
+}
+
+table.forum-topics {
+    clear: both;
+    margin-top: 10px;
+}
+
+table.forum-topics td {
+    padding: 3px 5px;
+}
+
+#forum div.buttons {
+    margin-top: 20px;
+}
+
+#forum span.button {
+    background: transparent url(/media/admin/img/admin/tool-left.gif);
+    height: 16px;
+    padding: 0 0 0 8px;
+    margin-left: 2px;
+    display: block;
+    float: left;
+}
+
+#forum span.button:hover {
+     background: url(/media/admin/img/admin/tool-left_over.gif) 0 0 no-repeat;
+}
+
+#forum span.button a {
+    background: #999 url(/media/admin/img/admin/tool-right.gif) no-repeat scroll right top;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    height: 14px;
+    padding: 0.1em 14px 0.1em 8px;
+    display: block;
+    float: left;
+    font-size: 11px;
+}
+
+#forum span.button a:hover {
+    background: #5B80B2 url(/media/admin/img/admin/tool-right_over.gif) no-repeat scroll 100% 0;
+}
+
+#forum .errorlist {
+    color: white;
+    background: red;
+    margin: 0 0 10px 0;
+    padding: 5px 10px;
+}
+
+#forum .errorlist li {
+    list-style-type: none;
+    font-weight: bold;
 }
 
 #footer { 

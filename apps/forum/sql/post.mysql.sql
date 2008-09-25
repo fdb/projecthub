@@ -1,0 +1,1 @@
+create fulltext index forum_posts_body on forum_posts (body);

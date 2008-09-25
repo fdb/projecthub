@@ -1,0 +1,66 @@
+{% extends "base_forum.html" %}
+{% load typogrify %}
+{% block breadcrumbs %}{{ block.super }} &rarr; <a href="{{ forum.get_absolute_url }}">{{ forum.name }}</a> &rarr; {{ topic.title }}{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+tr.post {border-top:3px solid #ddd }
+td.author{padding-right:5px;background:#ddd}
+td.body{padding-left:5px;}
+img.photo {display:block}
+span.fn {display:block}
+.change-row {background:#ddd;text-align:right}
+</style>
+
+<h2>{{ topic.title }}</h2>
+{% ifequal current_user topic.user %}
+<span class="edit"><a href="{{ topic.get_absolute_url }}edit/">Edit</a></span>
+{% endifequal %}
+
+
+<table class="posts" cellspacing="0" cellpadding="0">
+<tr><th>Author</th><th>Topic: {{ topic.title }}</th></tr>
+{% for post in topic.post_set.all %}
+<tr>
+	<td>{{ post.user.username }}</td>
+	<td>
+		<p class="date">{{post.created_at|date:"j N y"}} {{post.created_at|date:"H:i"}}</p>
+		{{ post.body|typogrify|linebreaks|urlizetrunc:40 }}
+	</td>
+</tr>
+{% endfor %}
+</table>
+<div class="buttons">
+<span class="button"><a href="{{ topic.get_absolute_url }}reply/">Reply to topic</a></span>
+</div>
+{% endblock %}
+{% comment %}
+
+
+{% if forloop.first %}
+<a id="posts-{{post.id}}" name="posts-{{post.id}}" />
+{% else %}
+<tr class="spacer"><td colspan="2"><a id="posts-{{post.id}}" name="posts-{{post.id}}" />
+{% endif %}
+<tr id="posts-{{post.id}}-row" class="post hentry">
+	<td class="author vcard">
+		<div class="date">
+			<a rel="bookmark" href="#posts-{{post.id}}">
+				<abbr class="updated" title="{{post.created_at}}">{{post.created_at|date:"j N y"}}<br />{{post.created_at|date:"H:i"}}</abbr>
+			</a>
+		</div>
+		<span class="fn"><a class="admin" href="{{ post.user.get_absolute_url }}">{{ post.user }}</a></span>
+		<span class="posts">1 post</span>
+		{% ifequal current_user post.user %}
+		<span class="edit"><a href="{{ post.get_absolute_url }}edit/">Edit</a></span>
+		{% endifequal %}
+		
+	</td>
+	<td id="post-body-{{post.id}}" class="body entry-content">
+		{{ post.body }}
+	</td>
+</tr>
+{% endfor %}
+</table>
+{% endcomment %}

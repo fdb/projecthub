@@ -1,0 +1,20 @@
+{% extends "base_forum.html" %}
+{% block breadcrumbs %}{{ block.super }} &rarr; <a href="{{ forum.get_absolute_url }}">{{ forum.name }}</a>{% endblock %}
+
+{% block content %}
+
+<h2>Edit topic title</h2>
+{% if form.errors %}
+<p>The form contains errors. Please correct these below.</p>
+{% endif %}
+
+
+<form method="post" action="{{form.get_absolute_url}}" name="create">
+<table class="table-form" cellspacing="0" cellpadding="0">
+{{ form.as_table }}
+<tr><td></td><td><input type="submit" value="edit" /> or <a href="{{topic.get_absolute_url}}">cancel</a></td></tr>
+</table>
+</form>
+
+<script type="text/javascript">document.getElementsByTagName('form')[1].getElementsByTagName('input')[0].focus();</script>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base_forum.html" %}
+{% block breadcrumbs %}{{ block.super }} &rarr; {{ forum.name }}{% endblock %}
+
+{% block content %}
+<h1>Forum {{forum.name}}</h1>
+<p class="small">{{ forum.description }}</p>
+<div class="buttons">
+<span class="button"><a href="{{forum.get_absolute_url}}new/">New topic</a></span>
+</div>
+<table class="forum-topics" cellspacing="0" cellpadding="0">
+	<tr><th>Topic</th><th>Date</th><th>Replies</th></tr>
+{% for topic in forum.topic_set.all %}
+<tr>
+	<td><a href="{{topic.get_absolute_url}}">{{topic.title}}</a></td>
+	<td>{{ topic.created_at|date:"j N y" }} {{ topic.created_at|date:"H:i" }}</td>
+	<td>{{ topic.replies_count }}</td>
+</tr>
+{% endfor %}
+</table>
+
+{% endblock %}

@@ -60,6 +60,7 @@ INSTALLED_APPS = (
     'template_utils',
 #    'apps.repository',
     'apps.weblog',
+    'apps.forum',
     'dmigrations',
 )
 

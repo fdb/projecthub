@@ -17,6 +17,7 @@ sitemaps = {
 
 urlpatterns = patterns('',
     (r'^weblog/', include('gravital.apps.weblog.urls')),
+    (r'^forum/', include('gravital.apps.forum.urls')),
     (r'^admin/(.*)', admin.site.root),
     (r'^rss/(?P<url>.*)/$', 'django.contrib.syndication.views.feed', {'feed_dict': feeds}),
     (r'^sitemap.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),

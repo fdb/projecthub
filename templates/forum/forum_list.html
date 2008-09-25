@@ -1,0 +1,17 @@
+{% extends "base_forum.html" %}
+
+{% block content %}
+<h1>Forum</h1>
+<table class="forums" cellspacing="0" cellpadding="0">
+{% for category in categories %}
+	<tr><th>{{ category.name }}</th></tr>
+	{% for forum in category.forum_set.all %}
+	<tr><td>
+		<a href="{{forum.get_absolute_url}}">{{ forum.name }}</a>
+		<p class="small">{{ forum.description }}</p>
+	</td></tr>
+	{% endfor %}
+{% endfor %}
+</table>
+
+{% endblock %}
