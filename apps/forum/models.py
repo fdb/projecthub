@@ -58,7 +58,7 @@ class Topic(models.Model):
     replies_count = property(_get_replies_count)
     
     class Meta:
-        pass
+        ordering = ('-created_at', )
 
     def __unicode__(self):
         return self.title
@@ -88,7 +88,6 @@ class Post(models.Model):
             self.topic.save()
     
     class Meta:
-        get_latest_by = 'created_at'
         ordering = ('created_at',)
         
     def __unicode__(self):
