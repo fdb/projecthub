@@ -1,9 +1,7 @@
 {% extends "base_forum.html" %}
 {% block breadcrumbs %}{{ block.super }} &rarr; <a href="{{ forum.get_absolute_url }}">{{ forum.name }}</a> &rarr; <a href="{{ topic.get_absolute_url }}">{{ topic.title }}</a> &rarr; Reply{% endblock %}
-
+{% block pagetitle %}Create new reply{% endblock %}
 {% block content %}
-
-<h2>Create new reply</h2>
 {% if form.errors %}
 <p>The form contains errors. Please correct these below.</p>
 {% endif %}

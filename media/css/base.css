@@ -19,6 +19,8 @@ strong {
 
 h1 { 
   font-size: 28px;
+  margin-top: 20px;
+  margin-bottom: 5px;
 }
 
 h2, h2 a { 
@@ -113,10 +115,16 @@ body {
 #breadcrumbs {
     padding: 10px 0 10px 0;
     font-size: 11px;
+    color: #888;
 }
 
 #breadcrumbs a {
     font-size: 11px;
+    color: #a88;
+}
+
+#breadcrumbs a:hover {
+    color: #f33;
 }
 
 #content-main { 
@@ -141,6 +149,8 @@ body {
 #forum table {
     border: 1px solid #ccc;
     width: 600px;
+    clear: both;
+    margin: 10px 0 0 0;
 }
 
 #forum table td {
@@ -169,12 +179,11 @@ p.date {
     padding: 0;
 }
 
-table.forum-topics {
-    clear: both;
+#forum table.forum-topics {
     margin-top: 10px;
 }
 
-table.forum-topics td {
+#forum table.forum-topics td {
     padding: 3px 5px;
 }
 

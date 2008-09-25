@@ -2,4 +2,5 @@
 {% load typogrify %}
 {% block title %}{{ flatpage.title }}{% endblock %}
 {% block pagetitle %}{{ flatpage.title|typogrify }}{% endblock %}
+{% block breadcrumbs %}{{ block.super }}  &rarr; {{ flatpage.title }}{% endblock %}
 {% block content %}{{ flatpage.content|safe|typogrify }}{% endblock %}

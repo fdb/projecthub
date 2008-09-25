@@ -1,7 +1,7 @@
 {% extends "base_forum.html" %}
-
+{% block pagetitle %}Forum{% endblock %}
+{% block breadcrumbs %}<a href="/">Home</a> &rarr; Forum{% endblock %}
 {% block content %}
-<h1>Forum</h1>
 <table class="forums" cellspacing="0" cellpadding="0">
 {% for category in categories %}
 	<tr><th>{{ category.name }}</th></tr>

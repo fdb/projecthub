@@ -1,24 +1,7 @@
 {% extends "base_forum.html" %}
 {% load typogrify %}
 {% block breadcrumbs %}{{ block.super }} &rarr; <a href="{{ forum.get_absolute_url }}">{{ forum.name }}</a> &rarr; {{ topic.title }}{% endblock %}
-
 {% block content %}
-
-<style type="text/css">
-tr.post {border-top:3px solid #ddd }
-td.author{padding-right:5px;background:#ddd}
-td.body{padding-left:5px;}
-img.photo {display:block}
-span.fn {display:block}
-.change-row {background:#ddd;text-align:right}
-</style>
-
-<h2>{{ topic.title }}</h2>
-{% ifequal current_user topic.user %}
-<span class="edit"><a href="{{ topic.get_absolute_url }}edit/">Edit</a></span>
-{% endifequal %}
-
-
 <table class="posts" cellspacing="0" cellpadding="0">
 <tr><th>Author</th><th>Topic: {{ topic.title }}</th></tr>
 {% for post in topic.post_set.all %}
@@ -33,6 +16,9 @@ span.fn {display:block}
 </table>
 <div class="buttons">
 <span class="button"><a href="{{ topic.get_absolute_url }}reply/">Reply to topic</a></span>
+{% ifequal user topic.user %}
+<span class="button"><a href="{{ topic.get_absolute_url }}edit/">Edit topic title</a></span>
+{% endifequal %}
 </div>
 {% endblock %}
 {% comment %}

@@ -1,8 +1,7 @@
 {% extends "base_forum.html" %}
 {% block breadcrumbs %}{{ block.super }} &rarr; {{ forum.name }}{% endblock %}
-
+{% block pagetitle %}{{ forum.name }}{% endblock %}
 {% block content %}
-<h1>Forum {{forum.name}}</h1>
 <p class="small">{{ forum.description }}</p>
 <div class="buttons">
 <span class="button"><a href="{{forum.get_absolute_url}}new/">New topic</a></span>
