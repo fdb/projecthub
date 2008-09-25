@@ -48,8 +48,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.debug',
     'django.core.context_processors.i18n',
     'django.core.context_processors.media',
-    'util.context.primary_links_to_context',
-    'util.context.site_info_to_context',
+    'projecthub.util.context.primary_links_to_context',
+    'projecthub.util.context.site_info_to_context',
 )
 
 ROOT_URLCONF = 'projecthub.urls'
@@ -67,10 +67,10 @@ INSTALLED_APPS = (
     'typogrify',
     'template_utils',
 #    'apps.repository',
-    'apps.weblog',
-    'apps.forum',
-    'apps.accounts',
-    'util',
+    'projecthub.apps.weblog',
+    'projecthub.apps.forum',
+    'projecthub.apps.accounts',
+    'projecthub.util',
     'dmigrations',
 )
 
