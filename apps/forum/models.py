@@ -22,6 +22,7 @@ class Forum(models.Model):
     name = models.CharField(max_length=150, unique=True)
     slug = models.SlugField(unique=True)
     description = models.CharField(max_length=200)
+    posting_help = models.TextField(blank=True)
     position = models.IntegerField()
     
     class Meta:

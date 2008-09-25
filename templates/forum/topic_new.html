@@ -1,4 +1,5 @@
 {% extends "base_forum.html" %}
+{% load typogrify %}
 {% block breadcrumbs %}{{ block.super }} &rarr; <a href="{{ forum.get_absolute_url }}">{{ forum.name }}</a>{% endblock %}
 {% block pagetitle %}Create new topic{% endblock %}
 {% block content %}
@@ -7,6 +8,10 @@
 {% endif %}
 <form method="post" action="{{form.get_absolute_url}}" name="create">
 <table class="table-form" cellspacing="0" cellpadding="0">
+<tr><th>Forum:</th><td>{{ forum.name }}</td></tr>
+{% if forum.posting_help %}
+<tr><th></th><td>{{ forum.posting_help|typogrify }}</td></tr>
+{% endif %}
 {{ form.as_table }}
 <tr><td></td><td><input type="submit" value="create" /> or <a href="{{forum.get_absolute_url}}">cancel</a></td></tr>
 </table>
