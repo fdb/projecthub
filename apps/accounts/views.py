@@ -4,8 +4,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.shortcuts import render_to_response
 from django.contrib.auth.decorators import login_required
-from gravital.apps.accounts.forms import UserCreateForm, UserEditForm
-from gravital.util.captcha import makekey, makeword, makeimage
+from gravital_website.apps.accounts.forms import UserCreateForm, UserEditForm
+from gravital_website.util.captcha import makekey, makeword, makeimage
 
 def create(request):
     if request.method == 'GET':

@@ -13,7 +13,7 @@ topic_info_dict = {
     'queryset': Topic.objects.all(),
 }
 
-urlpatterns = patterns('gravital.apps.forum.views',
+urlpatterns = patterns('gravital_website.apps.forum.views',
     (r'^/?$', 'list_forums'),
     (r'^(?P<forum_slug>[a-z\-]+)/$', 'list_topics'),
     (r'^(?P<forum_slug>[a-z\-]+)/new/$', 'new_topic'),
