@@ -68,5 +68,4 @@ def captcha(request):
     #word = makeword(key)
     s = StringIO()
     makeimage(word).save(s, format="png")
-    print word
     return HttpResponse(s.getvalue(), 'image/png')
