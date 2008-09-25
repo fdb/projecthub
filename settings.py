@@ -44,6 +44,14 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'util.context.primary_links_to_context',
+)
+
 ROOT_URLCONF = 'projecthub.urls'
 
 TEMPLATE_DIRS = (os.path.join(PROJECT_ROOT, 'templates'),)
@@ -62,6 +70,7 @@ INSTALLED_APPS = (
     'apps.weblog',
     'apps.forum',
     'apps.accounts',
+    'util',
     'dmigrations',
 )
 

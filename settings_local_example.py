@@ -9,3 +9,9 @@ DATABASE_PASSWORD = ''
 DATABASE_HOST = ''
 DATABASE_PORT = ''
 
+PRIMARY_LINKS = (
+    ('Home', '/'),
+    ('Download', '/download/'),
+    ('Documentation', '/documentation/'),
+    ('Weblog', '/weblog/'),
+    ('Forum', '/forum/'))
