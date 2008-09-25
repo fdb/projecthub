@@ -1,1 +1,27 @@
-{% extends "admin/rich_change_form.html" %}
+{% extends "admin/change_form.html" %}
+{% block extrahead %}{{ block.super }}
+<!-- Skin CSS file -->
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.5.2/build/assets/skins/sam/skin.css">
+<!-- Utility Dependencies -->
+<script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
+<script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/element/element-beta-min.js"></script> 
+<!-- Needed for Menus, Buttons and Overlays used in the Toolbar -->
+<script src="http://yui.yahooapis.com/2.5.2/build/container/container_core-min.js"></script>
+<script src="http://yui.yahooapis.com/2.5.2/build/menu/menu-min.js"></script>
+<script src="http://yui.yahooapis.com/2.5.2/build/button/button-min.js"></script>
+<!-- Source file for Rich Text Editor-->
+<script src="http://yui.yahooapis.com/2.5.2/build/editor/editor-beta-min.js"></script>
+{% endblock %}
+{% block bodyclass %}yui-skin-sam{% endblock %}
+{% block content %}{{ block.super }}
+<script type="text/javascript">
+var myEditor = new YAHOO.widget.Editor('id_content', {
+    height: '500px',
+    width: '822px',
+    dompath: true, //Turns on the bar at the bottom
+    animate: true, //Animates the opening, closing and moving of Editor windows
+    handleSubmit: true,
+});
+myEditor.render();
+</script>
+{% endblock %}
