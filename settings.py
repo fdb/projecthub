@@ -71,12 +71,8 @@ INSTALLED_APPS = (
     'projecthub.apps.forum',
     'projecthub.apps.accounts',
     'projecthub.util',
-    'dmigrations',
+    'south',
 )
-
-# Migrations
-DMIGRATIONS_DIR = os.path.join(PROJECT_ROOT, 'migrations')
-DISABLE_SYNCDB = True
 
 # accounts app settings
 BOGUS_EMAIL_DOMAINS = (

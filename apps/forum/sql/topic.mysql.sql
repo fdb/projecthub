@@ -1,1 +1,0 @@
-create fulltext index forum_topics_title on forum_topics (title);
